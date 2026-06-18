@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>League Pop Art — Moodboard & Style Reference</title>
+<style>
+  /* ============================================================
+     DESIGN TOKENS — starter palette for the League Pop Art system
+     Lichtenstein comic book hero
+     ============================================================ */
+  :root {
+    /* Core ink + paper */
+    --ink:        #0a0a0a;   /* outlines, text — near-black, never pure #000 in fills */
+    --paper:      #fdf6e3;   /* warm comic-page cream */
+    --paper-cool: #ffffff;   /* clean white for high-contrast panels */
+
+    /* Lichtenstein primaries (saturated, flat) */
+    --pop-red:    #e8112d;   /* Whaam! red */
+    --pop-yellow: #ffd000;   /* Ben-Day yellow */
+    --pop-blue:   #1066d6;   /* comic sky blue */
+    --pop-cyan:   #18b8d6;   /* halftone cyan tint */
+
+    /* League accent (bridge to existing brand orange) */
+    --league-orange: #f5821f;
+
+    /* Burst / accent secondaries */
+    --pop-pink:   #ff4f8b;
+    --pop-cream:  #fff3c4;
+
+    /* Line + shadow */
+    --outline:    4px;       /* default heavy ink outline */
+    --outline-xl: 6px;       /* hero outline */
+    --hard-shadow: 8px 8px 0 var(--ink); /* offset comic shadow, no blur */
+
+    --font-display: 'Arial Black', 'Helvetica Neue', Impact, sans-serif;
+    --font-body: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background-color: var(--paper);
+    /* Ben-Day dot field: uniform dots, even spacing */
+    background-image: radial-gradient(var(--pop-yellow) 1.5px, transparent 1.6px);
+    background-size: 16px 16px;
+    line-height: 1.45;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    background: var(--pop-red);
+    border: var(--outline-xl) solid var(--ink);
+    box-shadow: var(--hard-shadow);
+    padding: 28px 32px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 6vw, 72px);
+    line-height: 0.95;
+    margin: 0;
+    color: var(--paper-cool);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    -webkit-text-stroke: 2px var(--ink);
+    text-shadow: 4px 4px 0 var(--ink);
+  }
+  .masthead p {
+    margin: 12px 0 0;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--pop-yellow);
+    display: inline-block;
+    padding: 6px 12px;
+    border: 3px solid var(--ink);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  /* ---- Section scaffolding ---- */
+  section { margin-bottom: 48px; }
+  .section-label {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--pop-yellow);
+    display: inline-block;
+    padding: 6px 14px;
+    margin-bottom: 18px;
+    transform: rotate(-1.5deg);
+  }
+  h2.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 4vw, 40px);
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    letter-spacing: -0.5px;
+  }
+  .lede { max-width: 720px; font-size: 16px; margin: 0 0 22px; }
+
+  .grid { display: grid; gap: 20px; }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+  .card {
+    background: var(--paper-cool);
+    border: var(--outline) solid var(--ink);
+    box-shadow: var(--hard-shadow);
+    padding: 20px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 18px; text-transform: uppercase; }
+  .card p { margin: 0; font-size: 14px; }
+
+  /* ---- Palette swatches ---- */
+  .swatch {
+    border: var(--outline) solid var(--ink);
+    box-shadow: 5px 5px 0 var(--ink);
+    overflow: hidden;
+  }
+  .swatch .chip { height: 110px; }
+  .swatch .meta {
+    padding: 10px 12px;
+    background: var(--paper-cool);
+    border-top: var(--outline) solid var(--ink);
+  }
+  .swatch .name { font-weight: 800; text-transform: uppercase; font-size: 13px; }
+  .swatch .hex { font-family: monospace; font-size: 13px; opacity: 0.8; }
+
+  /* ---- Technique demos ---- */
+  .demo {
+    height: 200px;
+    border: var(--outline) solid var(--ink);
+    box-shadow: var(--hard-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .demo .tag {
+    position: absolute; bottom: 0; left: 0;
+    background: var(--ink); color: var(--paper-cool);
+    font-family: var(--font-display); font-size: 12px;
+    padding: 5px 10px; letter-spacing: 1px;
+  }
+  /* Ben-Day: uniform dots */
+  .benday {
+    background-color: var(--pop-red);
+    background-image: radial-gradient(var(--ink) 2.5px, transparent 2.6px);
+    background-size: 14px 14px;
+  }
+  /* Halftone: simulated size gradient via layered radial gradients */
+  .halftone {
+    background-color: var(--pop-yellow);
+    background-image:
+      radial-gradient(circle at center, var(--pop-red) 0%, var(--pop-red) 40%, transparent 41%),
+      radial-gradient(var(--ink) 3px, transparent 3.2px);
+    background-size: 100% 100%, 12px 12px;
+    background-blend-mode: multiply;
+  }
+  /* Starburst rays */
+  .starburst {
+    background: var(--pop-yellow);
+    background-image: repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      var(--pop-red) 0deg 9deg,
+      var(--pop-yellow) 9deg 18deg
+    );
+  }
+
+  /* ---- Action burst (the POW/BAM treatment) ---- */
+  .burst-stage {
+    display: flex; flex-wrap: wrap; gap: 28px; align-items: center;
+    padding: 30px; background: var(--pop-blue);
+    border: var(--outline) solid var(--ink); box-shadow: var(--hard-shadow);
+  }
+  .burst {
+    --bg: var(--pop-yellow);
+    position: relative;
+    width: 150px; height: 150px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .burst::before {
+    content: ""; position: absolute; inset: 0;
+    background: var(--bg);
+    border: 4px solid var(--ink);
+    clip-path: polygon(50% 0%, 61% 23%, 86% 12%, 78% 39%, 100% 50%, 78% 61%, 86% 88%, 61% 77%, 50% 100%, 39% 77%, 14% 88%, 22% 61%, 0% 50%, 22% 39%, 14% 12%, 39% 23%);
+  }
+  .burst span {
+    position: relative;
+    font-family: var(--font-display);
+    font-size: 30px; text-transform: uppercase;
+    color: var(--pop-red);
+    -webkit-text-stroke: 1.5px var(--ink);
+    transform: rotate(-8deg);
+  }
+  .burst.b2 { --bg: var(--pop-red); }
+  .burst.b2 span { color: var(--pop-yellow); }
+  .burst.b3 { --bg: var(--paper-cool); }
+  .burst.b3 span { color: var(--pop-blue); }
+
+  /* Speech bubble */
+  .speech {
+    background: var(--paper-cool);
+    border: var(--outline) solid var(--ink);
+    border-radius: 24px;
+    padding: 18px 22px; position: relative;
+    max-width: 280px; font-weight: 700;
+    box-shadow: var(--hard-shadow);
+  }
+  .speech::after {
+    content: ""; position: absolute; bottom: -22px; left: 36px;
+    width: 0; height: 0;
+    border: 14px solid transparent;
+    border-top-color: var(--ink);
+  }
+  .speech::before {
+    content: ""; position: absolute; bottom: -14px; left: 40px;
+    width: 0; height: 0; z-index: 1;
+    border: 10px solid transparent;
+    border-top-color: var(--paper-cool);
+  }
+
+  /* ---- Token code block ---- */
+  pre.tokens {
+    background: var(--ink); color: var(--pop-cream);
+    border: var(--outline) solid var(--ink);
+    box-shadow: var(--hard-shadow);
+    padding: 22px; overflow-x: auto;
+    font-size: 13px; line-height: 1.6;
+    border-radius: 0;
+  }
+  pre.tokens .c { color: #8aa0b8; } /* comment */
+  pre.tokens .p { color: var(--pop-yellow); } /* property */
+
+  /* ---- Reference link list ---- */
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li {
+    border-bottom: 2px dashed var(--ink);
+    padding: 12px 0; font-size: 14px;
+  }
+  .links li:last-child { border-bottom: none; }
+  .links a { color: var(--pop-red); font-weight: 700; text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+  .links .desc { display: block; color: var(--ink); font-weight: 400; margin-top: 2px; }
+  .badge {
+    font-size: 10px; font-weight: 800; text-transform: uppercase;
+    padding: 2px 7px; border: 2px solid var(--ink); margin-left: 6px;
+    vertical-align: middle; letter-spacing: 0.5px;
+  }
+  .badge.free { background: var(--pop-yellow); }
+  .badge.paid { background: var(--pop-pink); color: var(--paper-cool); }
+  .badge.ref { background: var(--pop-cyan); }
+
+  .principles { columns: 2; column-gap: 28px; }
+  .principles li { break-inside: avoid; margin-bottom: 12px; font-size: 14px; }
+  @media (max-width: 640px) { .principles { columns: 1; } }
+
+  footer {
+    margin-top: 60px; padding-top: 20px;
+    border-top: var(--outline) solid var(--ink);
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>League Pop Art</h1>
+    <p>Moodboard &amp; Style Reference · Lichtenstein comic book hero</p>
+  </header>
+
+  <!-- ============ DIRECTION ============ -->
+  <section>
+    <span class="section-label">The Direction</span>
+    <h2 class="section-title">What we're going for</h2>
+    <p class="lede">Roy Lichtenstein's comic-book vocabulary — flat saturated primaries, heavy uniform black outlines, Ben-Day dots, and a single explosive sound word — applied to the League site. Take League photos, halftone them, and hang an action burst off the side.</p>
+    <div class="burst-stage">
+      <div class="burst b1"><span>POW!</span></div>
+      <div class="burst b2"><span>BAM!</span></div>
+      <div class="burst b3"><span>ZAP!</span></div>
+      <div class="speech">Bold outlines. Three colors plus black and white. Nothing subtle.</div>
+    </div>
+  </section>
+
+  <!-- ============ PALETTE ============ -->
+  <section>
+    <span class="section-label">Palette</span>
+    <h2 class="section-title">Color tokens</h2>
+    <p class="lede">Keep it to 3–4 saturated colors plus ink and paper. League orange bridges to the existing brand; the rest are Lichtenstein primaries. Fills are flat — no gradients except in halftone shadows.</p>
+    <div class="grid grid-3">
+      <div class="swatch"><div class="chip" style="background:#e8112d"></div><div class="meta"><span class="name">Pop Red</span> · <span class="hex">#e8112d</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#ffd000"></div><div class="meta"><span class="name">Ben-Day Yellow</span> · <span class="hex">#ffd000</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#1066d6"></div><div class="meta"><span class="name">Comic Blue</span> · <span class="hex">#1066d6</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#18b8d6"></div><div class="meta"><span class="name">Halftone Cyan</span> · <span class="hex">#18b8d6</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#f5821f"></div><div class="meta"><span class="name">League Orange</span> · <span class="hex">#f5821f</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#ff4f8b"></div><div class="meta"><span class="name">Pop Pink</span> · <span class="hex">#ff4f8b</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#0a0a0a"></div><div class="meta"><span class="name">Ink</span> · <span class="hex">#0a0a0a</span></div></div>
+      <div class="swatch"><div class="chip" style="background:#fdf6e3"></div><div class="meta"><span class="name">Comic Paper</span> · <span class="hex">#fdf6e3</span></div></div>
+    </div>
+  </section>
+
+  <!-- ============ TECHNIQUES ============ -->
+  <section>
+    <span class="section-label">Techniques</span>
+    <h2 class="section-title">Dots, halftone &amp; rays</h2>
+    <p class="lede">Ben-Day = uniform dots, used for flat decorative fills. Halftone = variable-size dots, used for photo shadows and gradients. Starburst rays sit behind hero callouts. All three below are pure CSS — own-able, no licensing.</p>
+    <div class="grid grid-3">
+      <div class="demo benday"><span class="tag">BEN-DAY · uniform</span></div>
+      <div class="demo halftone"><span class="tag">HALFTONE · variable</span></div>
+      <div class="demo starburst"><span class="tag">STARBURST · rays</span></div>
+    </div>
+  </section>
+
+  <!-- ============ TOKENS ============ -->
+  <section>
+    <span class="section-label">Starter Tokens</span>
+    <h2 class="section-title">Drop into your CSS</h2>
+    <p class="lede">The :root block powering this page. Copy it as the seed for the design system — colors, the heavy-outline scale, and the offset hard shadow that gives everything its cut-from-paper feel.</p>
+    <pre class="tokens">:root {
+  <span class="c">/* Core ink + paper */</span>
+  <span class="p">--ink</span>:            #0a0a0a;
+  <span class="p">--paper</span>:          #fdf6e3;
+  <span class="p">--paper-cool</span>:     #ffffff;
+
+  <span class="c">/* Lichtenstein primaries (flat, saturated) */</span>
+  <span class="p">--pop-red</span>:        #e8112d;
+  <span class="p">--pop-yellow</span>:     #ffd000;
+  <span class="p">--pop-blue</span>:       #1066d6;
+  <span class="p">--pop-cyan</span>:       #18b8d6;
+
+  <span class="c">/* League bridge + secondaries */</span>
+  <span class="p">--league-orange</span>:  #f5821f;
+  <span class="p">--pop-pink</span>:       #ff4f8b;
+
+  <span class="c">/* Line + shadow language */</span>
+  <span class="p">--outline</span>:        4px;   <span class="c">/* default heavy outline */</span>
+  <span class="p">--outline-xl</span>:     6px;   <span class="c">/* hero outline */</span>
+  <span class="p">--hard-shadow</span>:    8px 8px 0 var(--ink);  <span class="c">/* offset, no blur */</span>
+}</pre>
+  </section>
+
+  <!-- ============ PRINCIPLES ============ -->
+  <section>
+    <span class="section-label">Rules of the Style</span>
+    <h2 class="section-title">What makes it read as pop art</h2>
+    <ul class="principles">
+      <li><strong>Thick uniform black outlines</strong> on every element — cards, buttons, images, bubbles. This is the single most defining trait.</li>
+      <li><strong>Flat fills only.</strong> No soft gradients, no drop-shadow blur. Shadows are hard, offset, and solid black.</li>
+      <li><strong>3–4 colors max</strong> per composition, plus ink and paper. Saturated, high-contrast pairings.</li>
+      <li><strong>One sound word per moment</strong> — POW, BAM, ZAP — in a burst, never two competing in the same view.</li>
+      <li><strong>Halftone the photos</strong>, don't leave them photographic. Variable dots for skin and sky.</li>
+      <li><strong>Display type is heavy and tilted</strong> — Arial Black / Impact, slight rotation, ink stroke around the fill.</li>
+      <li><strong>Caption boxes</strong> — terse yellow narration panels with a black border, lifted straight from comic panels.</li>
+    </ul>
+  </section>
+
+  <!-- ============ REFERENCES ============ -->
+  <section>
+    <span class="section-label">Reference Library</span>
+    <h2 class="section-title">Where to crib from</h2>
+
+    <h3 style="text-transform:uppercase;margin-top:8px;">Canonical source imagery</h3>
+    <ul class="links">
+      <li><a href="https://www.moma.org/collection/works/80249">MoMA — Drowning Girl (1963)</a><span class="badge ref">study</span><span class="desc">High-res zoomable. The reference for halftone skin + caption box + tilted sound word.</span></li>
+      <li><a href="https://www.lichtensteincatalogue.org/catalogue/entry.php?id=452">Lichtenstein Catalogue Raisonné</a><span class="badge ref">study</span><span class="desc">Cleanest archive of his full body of work.</span></li>
+      <li><a href="https://www.myartbroker.com/artist-roy-lichtenstein/articles/roy-lichtenstein-10-most-famous-works">MyArtBroker — 10 most famous works</a><span class="badge ref">study</span><span class="desc">Whaam!, Look Mickey, Drowning Girl overview.</span></li>
+      <li><a href="https://guyhepner.com/news/458-roy-lichtensteins-top-10-most-famous-works-a-comprehensive-guide/">Guy Hepner — top 10 works</a><span class="badge ref">study</span></li>
+    </ul>
+
+    <h3 style="text-transform:uppercase;">Cribbable assets — bursts, bubbles, halftone</h3>
+    <ul class="links">
+      <li><a href="https://www.freevector.com/pop-art-bubbles">FreeVector — pop art bubbles</a><span class="badge free">CC-BY</span><span class="desc">Actually usable in production with attribution.</span></li>
+      <li><a href="https://www.photoshopsupply.com/patterns-textures/halftone-texture">Photoshop Supply — halftone texture/brush pack</a><span class="badge free">free</span></li>
+      <li><a href="https://creator.nightcafe.studio/tools/comic-book-halftone-effect-generator">NightCafe — halftone generator</a><span class="badge free">tool</span><span class="desc">Halftone-ify your own League photos.</span></li>
+      <li><a href="https://effect.app/effects/halftone-screen">Effect.app — halftone filter</a><span class="badge free">tool</span></li>
+      <li><a href="https://www.istockphoto.com/illustrations/pop-art-speech-bubble">iStock — pop art speech bubbles</a><span class="badge paid">license</span></li>
+      <li><a href="https://www.istockphoto.com/illustrations/comic-pow">iStock — comic POW bursts</a><span class="badge paid">license</span></li>
+      <li><a href="https://www.dreamstime.com/illustration/pop-art-speech-bubbles.html">Dreamstime — pop art speech bubbles</a><span class="badge paid">license</span></li>
+    </ul>
+
+    <h3 style="text-transform:uppercase;">Live sites &amp; galleries in this style</h3>
+    <ul class="links">
+      <li><a href="https://www.awwwards.com/inspiration/comic-website-social-share">Awwwards — comic website</a><span class="badge ref">inspo</span></li>
+      <li><a href="https://www.awwwards.com/awwwards/collections/illustration-in-web-design/">Awwwards — illustration in web design</a><span class="badge ref">inspo</span></li>
+      <li><a href="https://dribbble.com/tags/comic_pop_art">Dribbble — comic pop art tag</a><span class="badge ref">inspo</span></li>
+      <li><a href="https://dribbble.com/tags/comic-book-website">Dribbble — comic book website tag</a><span class="badge ref">inspo</span></li>
+      <li><a href="https://codemyui.com/tag/comic-book/">CodeMyUI — comic-book front-end snippets</a><span class="badge ref">code</span></li>
+      <li><a href="https://designwebkit.com/web-and-trends/pop-art-style-website-designs/">DesignWebkit — pop-art website roundup</a><span class="badge ref">inspo</span></li>
+    </ul>
+
+    <h3 style="text-transform:uppercase;">Technique &amp; palette</h3>
+    <ul class="links">
+      <li><a href="https://doncorgi.com/blog/ben-day-dots-vs-halftones/">Don Corgi — Ben-Day vs. halftone</a><span class="badge ref">read</span></li>
+      <li><a href="https://publicdelivery.org/what-is/ben-day-dots/">Public Delivery — what are Ben-Day dots</a><span class="badge ref">read</span></li>
+      <li><a href="https://www.elegantthemes.com/blog/design/retro-comic-book-art-using-ben-day-dots-in-web-design">Elegant Themes — Ben-Day dots in web design</a><span class="badge ref">read</span></li>
+      <li><a href="https://doncorgi.com/blog/pop-art-color-palettes/">Don Corgi — pop-art palettes + hex</a><span class="badge ref">palette</span></li>
+      <li><a href="https://www.media.io/color-palette/pop-art-color-palette.html">Media.io — pop-art palette set</a><span class="badge ref">palette</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    League Pop Art Moodboard · compiled June 2026 · stick to FreeVector (CC-BY) or self-generated halftones for production assets
+  </footer>
+
+</div>
+</body>
+</html>
