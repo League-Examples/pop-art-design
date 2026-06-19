@@ -1,4 +1,29 @@
 
+4 Excited children compete in a robotic destruction derby, using handheld joysticks to control robots on a square playfield. Then robots zoom about and crash into each other, with some robots leaping into the air, and parts flying off of others. 
+
+The uploaded robot photographs are the most important visual reference. Reproduce these robots faithfully. The robots should clearly resemble the uploaded designs: compact educational robots built around Micro:bit-style controller boards, two-wheel drive chassis, visible batteries, exposed wiring, small servo motors, lightweight plastic beam structures, simple grabbers, forks, paddles, pushers, scoops, and collection mechanisms. Preserve the actual proportions, engineering simplicity, and distinctive classroom-built appearance of the uploaded robots.
+
+These are not combat robots, industrial robots, race cars, battlebots, science-fiction machines, humanoid robots, or giant mechs. They should look like real student-built competition robots created from educational robotics kits. However, the robots must be rendered In pop art style like the rest of the image; the robots will be visually pop art but their form and structure will be based on the robot photographic. 
+
+Transform the uploaded playfield into a clean, dramatic competition arena. Remove all classroom clutter, furniture, boxes, backpacks, chairs, computers, wall decorations, posters, and unrelated background objects. Simplify the environment into a visually striking competition field while preserving the recognizable geometry of the original robotics arena.
+
+Move all children outside the competition area. Position them around the perimeter as spectators, inventors, drivers, and teammates. Their faces should be large, expressive, and emotionally dramatic in classic comic-book fashion. They are cheering, reacting, strategizing, and watching the match unfold. No child is physically inside the arena.
+
+The robots are actively competing in a robotics challenge. Some robots are pushing foam balls. Others are collecting colored cubes. Others are maneuvering for position. One robot is attempting to steal a game piece from another. One robot is nearly tipping while trying to score. The action is fast, intelligent, and strategic rather than violent.
+
+The game pieces must closely resemble the uploaded examples: bright foam balls, colored cubes, scoring objects, and educational robotics competition elements. Every object on the field must appear to belong to the game.
+
+. Dramatic perspective. Strong sense of speed. Motion lines. Flying game pieces. Near collisions. Mechanical precision. Competitive tension. The feeling should be Formula One, hockey, and a middle-school robotics tournament combined into a single moment of maximum excitement.
+
+Authentic Roy Lichtenstein-inspired pop-art aesthetic. Bold black contour lines. Precise Ben-Day dot patterns. Flat primary colors. Strong red, yellow, blue, black, and white palette. Crisp graphic shapes. High contrast. Clean comic-book composition. Museum-quality pop-art painting. The image should resemble a lost 1960s Lichtenstein canvas depicting a robotics competition.
+
+One comic-book sound effect is permitted, integrated naturally into the action: “WHAM!”, “CLASH!”, “ZOOM!”, or “BAM!”
+
+No Funko Pop influence. No Pixar influence. No anime influence. No CGI appearance. No photorealism. No modern digital illustration style. No logos. No branding. No wall text.
+
+The final image should celebrate ingenuity, engineering, competition, teamwork, and the excitement of educational robotics while remaining visually faithful to the uploaded robot designs and game pieces.
+
+--- 
 
 Transform the uploaded robotics competition photographs and uploaded robot photographs into a dramatic Roy Lichtenstein-inspired pop-art painting.
 
