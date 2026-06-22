@@ -13,6 +13,10 @@ The robots are actively competing in a robotics challenge. Some robots are pushi
 
 The game pieces must closely resemble the uploaded examples: bright foam balls, colored cubes, scoring objects, and educational robotics competition elements. Every object on the field must appear to belong to the game.
 
+The children are holding the uploaded joystick controllers correctly. The controllers are based directly on the uploaded reference photograph. The visible side of each controller shows the battery compartment, battery holder, mounting bracket, screws, and red-and-blue side grips. The Micro:bit display, buttons, and joystick controls face toward the child and are largely hidden from the viewer. The controllers must be shown from the rear, exactly as they would appear when actively held and operated by a student during competition.
+
+Do not depict the controllers as video-game gamepads. Do not show the Micro:bit display facing the viewer. Do not show the controller front face. Do not invent additional buttons, triggers, screens, joysticks, thumbsticks, or console-style controls. Match the uploaded joystick reference photograph.
+
 . Dramatic perspective. Strong sense of speed. Motion lines. Flying game pieces. Near collisions. Mechanical precision. Competitive tension. The feeling should be Formula One, hockey, and a middle-school robotics tournament combined into a single moment of maximum excitement.
 
 Authentic Roy Lichtenstein-inspired pop-art aesthetic. Bold black contour lines. Precise Ben-Day dot patterns. Flat primary colors. Strong red, yellow, blue, black, and white palette. Crisp graphic shapes. High contrast. Clean comic-book composition. Museum-quality pop-art painting. The image should resemble a lost 1960s Lichtenstein canvas depicting a robotics competition.
